@@ -22,7 +22,7 @@ public class RESTController {
 
     }
 
-    @RequestMapping(path="/sendCustomer", method = RequestMethod.POST, consumes = {"application/json"})
+    @PostMapping(path="/sendCustomer", consumes = {"application/json"})
     public void sendCustomer(@RequestBody Customer customer) {
         System.out.println("Sending a transaction.");
         // Post message to the message queue named "OrderTransactionQueue"

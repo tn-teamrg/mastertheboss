@@ -18,6 +18,7 @@ package com.mastertheboss;
 import java.net.InetAddress;
 
 import com.mastertheboss.domain.IPAddress;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -26,7 +27,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class IPAddressController {
     private int counter;
 
-    @RequestMapping(value = "/ip", method = RequestMethod.GET)
+    @GetMapping(value = "/ip")
     public IPAddress ipaddress() throws Exception {
         return new IPAddress(++counter, InetAddress.getLocalHost().getHostAddress());
     }
