@@ -144,7 +144,7 @@ public class EJBBrowser {
         req.get("child-type").set("jms-queue");
  
         String mode = properties.getProperty("mode");
-        if (mode.equals("domain")) {
+        if ("domain".equals(mode)) {
             req.get(ClientConstants.OP_ADDR).add("profile", properties.getProperty("profile"));
         }
         req.get(ClientConstants.OP_ADDR).add("subsystem", "messaging");

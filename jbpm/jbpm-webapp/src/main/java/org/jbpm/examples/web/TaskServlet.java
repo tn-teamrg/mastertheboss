@@ -43,7 +43,7 @@ public class TaskServlet extends HttpServlet {
 		try {
 			String action = req.getParameter("action");
 
-			if (action.equals("create")) {
+			if ("create".equals(action)) {
 				Map<String, Object> params = new HashMap<String, Object>();
 				params.put("money", 2000);
 
@@ -51,7 +51,7 @@ public class TaskServlet extends HttpServlet {
 						"com.sample.bpmn", params);
 				out.println("Process started with Id " + processInstanceId);
 				out.println("<br/><a href=\"task?action=submit\">Complete Task</a> <br/>");
-			} else if (action.equals("submit")) {
+			} else if ("submit".equals(action)) {
 				List<TaskSummary> taskListJohn = taskService
 						.retrieveTaskList("john");
 				approveAllTasks(taskListJohn, "john");
