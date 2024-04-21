@@ -1,5 +1,6 @@
 package com.mastertheboss;
 
+import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -12,7 +13,7 @@ public class Bean {
     private String anagram;
  
     public void generateAnagram() {
-        Random rand = new Random();
+        Random rand = new SecureRandom();
  
         List<Character> characters = new ArrayList<Character>();
         for (char c : word.toCharArray()) {

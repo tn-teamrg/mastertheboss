@@ -1,6 +1,7 @@
 package com.mastertheboss.reactive;
 
 import io.smallrye.reactive.messaging.annotations.Broadcast;
+import java.security.SecureRandom;
 import org.eclipse.microprofile.reactive.messaging.Incoming;
 import org.eclipse.microprofile.reactive.messaging.Outgoing;
 
@@ -16,7 +17,7 @@ public class QuoteConverter {
     HashMap<String,Double> quotes;
 
 
-    private Random random = new Random();
+    private Random random = new SecureRandom();
     @PostConstruct
     public void init() {
         quotes = new HashMap<>();
