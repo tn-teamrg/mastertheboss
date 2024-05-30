@@ -63,7 +63,9 @@ public class Manager {
 	public List getCacheList() {
 		List<Item> dataList = new ArrayList<Item>();
 		if (cache != null)
-		dataList.addAll(cache.values());
+		{
+		    dataList.addAll(cache.values());
+		}
 		
  
 		if (cache != null && cache.size() > 0) {
