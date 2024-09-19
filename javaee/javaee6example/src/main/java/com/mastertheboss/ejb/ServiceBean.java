@@ -37,7 +37,7 @@ public class  ServiceBean   {
 	 
 	public void delete(SimpleProperty p){
 
-		Query query = em.createQuery("delete FROM com.sample.model.SimpleProperty p where p.key='"+p.getKey()+"'");
+		Query query = em.createQuery("delete FROM com.sample.model.SimpleProperty p where p.key=:parameter0").setParameter(":parameter0", p.getKey());
 
 		query.executeUpdate();
 		propEventSrc.fire(p);
