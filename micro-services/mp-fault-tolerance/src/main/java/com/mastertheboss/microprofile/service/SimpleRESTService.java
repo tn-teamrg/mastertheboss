@@ -1,5 +1,6 @@
 package com.mastertheboss.microprofile.service;
 
+import java.security.SecureRandom;
 import org.eclipse.microprofile.faulttolerance.Fallback;
 import org.eclipse.microprofile.faulttolerance.Timeout;
 
@@ -31,7 +32,7 @@ public class SimpleRESTService {
 	}
 	private void randomSleep() {
 		try {
-			Thread.sleep(new Random().nextInt(400));
+			Thread.sleep(new SecureRandom().nextInt(400));
 		} catch (Exception e) {
             System.out.println("The application is taking too long...");
 
