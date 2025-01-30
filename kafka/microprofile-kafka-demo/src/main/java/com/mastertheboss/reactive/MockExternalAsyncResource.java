@@ -1,5 +1,6 @@
 package com.mastertheboss.reactive;
 
+import java.security.SecureRandom;
 import java.util.Random;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.CompletionStage;
@@ -17,7 +18,7 @@ import javax.json.bind.JsonbBuilder;
 @ApplicationScoped
 public class MockExternalAsyncResource {
     private static final int TICK = 2000;
-    private Random random = new Random();
+    private Random random = new SecureRandom();
     String company[] = new String[] {
             "Acme","Globex","Umbrella","Soylent","Initech" };
 
