@@ -1,5 +1,6 @@
 package com.example.testrest;
 
+import java.security.SecureRandom;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.retry.annotation.Backoff;
 import org.springframework.retry.annotation.Recover;
@@ -31,7 +32,7 @@ public class CustomerController {
     public List<Customer> findAll() {
 
 
-        int random = new Random().nextInt(2);
+        int random = new SecureRandom().nextInt(2);
 
 
         if (random == 1) {
